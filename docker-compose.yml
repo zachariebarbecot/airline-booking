@@ -1,0 +1,25 @@
+version: "3.7"
+services:
+  postgres:
+    image: postgres:12
+    network_mode: bridge
+    container_name: airline-booking-db
+    restart: always
+    environment:
+      POSTGRES_DB: airline-booking
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ./sql/schema.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+  airline-booking:
+    build: .
+    network_mode: bridge
+    container_name: airline-booking-app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    links:
+      - postgres
