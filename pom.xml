@@ -25,7 +25,7 @@
         <maven-site-plugin.version>3.8.2</maven-site-plugin.version>
         <maven-sortpom-plugin.version>2.10.0</maven-sortpom-plugin.version>
         <maven-surefire-plugin.version>3.0.0-M4</maven-surefire-plugin.version>
-        <springfox.version>2.9.2</springfox.version>
+        <springfox.version>2.10.0</springfox.version>
     </properties>
     <dependencies>
         <dependency>
